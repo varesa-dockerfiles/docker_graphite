@@ -2,13 +2,12 @@ FROM registry.esav.fi:5000/python2
 
 MAINTAINER Esa Varemo <esa@kuivanto.fi>
 
+RUN yum install -y bitmap-* cairo
+
 RUN \
 	pip install https://github.com/graphite-project/ceres/tarball/master &&\
-	pip install whisper &&\
-	pip install carbon &&\
-	pip install graphite-web &&\
-	pip install django==1.8.8 &&\ 
-	pip install django-tagging &&\
+	pip install whisper  carbon  graphite-web &&\
+	pip install cairocffi django==1.8.8  django-tagging &&\
 	pip install supervisor
 
 ADD supervisord.conf /etc/supervisord.conf
