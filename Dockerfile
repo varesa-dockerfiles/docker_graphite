@@ -8,7 +8,7 @@ RUN \
 	pip install carbon &&\
 	pip install graphite-web &&\
 	pip install django==1.8.8 &&\ 
-	django-tagging &&\
+	pip install django-tagging &&\
 	pip install supervisor
 
 ADD supervisord.conf /etc/supervisord.conf
